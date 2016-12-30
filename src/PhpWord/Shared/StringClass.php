@@ -20,7 +20,7 @@ namespace PhpOffice\PhpWord\Shared;
 /**
  * Common string functions
  */
-class String
+class StringClass
 {
     /**
      * Control characters array

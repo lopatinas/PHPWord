@@ -17,7 +17,7 @@
 
 namespace PhpOffice\PhpWord\Element;
 
-use PhpOffice\PhpWord\Shared\String;
+use PhpOffice\PhpWord\Shared\StringClass;
 use PhpOffice\PhpWord\Style\Font;
 use PhpOffice\PhpWord\Style\Paragraph;
 
@@ -65,8 +65,8 @@ class Link extends AbstractElement
      */
     public function __construct($target, $text = null, $fontStyle = null, $paragraphStyle = null)
     {
-        $this->target = String::toUTF8($target);
-        $this->text = is_null($text) ? $this->target : String::toUTF8($text);
+        $this->target = StringClass::toUTF8($target);
+        $this->text = is_null($text) ? $this->target : StringClass::toUTF8($text);
         $this->fontStyle = $this->setStyle(new Font('text'), $fontStyle);
         $this->paragraphStyle = $this->setStyle(new Paragraph(), $paragraphStyle);
 

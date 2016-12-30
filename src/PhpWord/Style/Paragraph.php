@@ -18,7 +18,7 @@
 namespace PhpOffice\PhpWord\Style;
 
 use PhpOffice\PhpWord\Exception\InvalidStyleException;
-use PhpOffice\PhpWord\Shared\String;
+use PhpOffice\PhpWord\Shared\StringClass;
 
 /**
  * Paragraph style
@@ -169,7 +169,7 @@ class Paragraph extends AbstractStyle
      */
     public function setStyleValue($key, $value)
     {
-        $key = String::removeUnderscorePrefix($key);
+        $key = StringClass::removeUnderscorePrefix($key);
         if ($key == 'indent' || $key == 'hanging') {
             $value = $value * 720;
         } elseif ($key == 'spacing') {

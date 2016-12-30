@@ -17,7 +17,7 @@
 
 namespace PhpOffice\PhpWord\Style;
 
-use PhpOffice\PhpWord\Shared\String;
+use PhpOffice\PhpWord\Shared\StringClass;
 
 /**
  * Abstract style class
@@ -143,7 +143,7 @@ abstract class AbstractStyle
         if (isset($this->aliases[$key])) {
             $key = $this->aliases[$key];
         }
-        $method = 'set' . String::removeUnderscorePrefix($key);
+        $method = 'set' . StringClass::removeUnderscorePrefix($key);
         if (method_exists($this, $method)) {
             $this->$method($value);
         }

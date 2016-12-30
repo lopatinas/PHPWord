@@ -18,7 +18,7 @@
 namespace PhpOffice\PhpWord\Writer\Word2007\Element;
 
 use PhpOffice\PhpWord\Element\AbstractElement as Element;
-use PhpOffice\PhpWord\Shared\String;
+use PhpOffice\PhpWord\Shared\StringClass;
 use PhpOffice\PhpWord\Shared\XMLWriter;
 
 /**
@@ -123,6 +123,6 @@ abstract class AbstractElement
      */
     protected function getText($text)
     {
-        return String::controlCharacterPHP2OOXML(htmlspecialchars($text));
+        return StringClass::controlCharacterPHP2OOXML(htmlspecialchars($text));
     }
 }

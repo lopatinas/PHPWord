@@ -18,7 +18,7 @@
 namespace PhpOffice\PhpWord;
 
 use PhpOffice\PhpWord\Exception\Exception;
-use PhpOffice\PhpWord\Shared\String;
+use PhpOffice\PhpWord\Shared\StringClass;
 use PhpOffice\PhpWord\Shared\ZipArchive;
 
 /**
@@ -359,7 +359,7 @@ class Template
             $search = '${' . $search . '}';
         }
 
-        if (!String::isUTF8($replace)) {
+        if (!StringClass::isUTF8($replace)) {
             $replace = utf8_encode($replace);
         }
         $replace = htmlspecialchars($replace);
